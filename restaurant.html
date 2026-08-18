@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Spice House - Delicious biryani and authentic Indian cuisine.">
+    <title>Spice House | Royal Biryani & Authentic Indian Cuisine</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #991b1b;
+            --primary-hover: #7f1d1d;
+            --secondary: #d97706;
+            --bg-warm: #fffaf5;
+            --bg-card: #ffffff;
+            --text-dark: #2d1810;
+            --text-muted: #6e5849;
+            --border: rgba(217, 119, 6, 0.15);
+            --shadow-sm: 0 4px 20px rgba(45, 24, 16, 0.06);
+            --shadow-lg: 0 16px 40px rgba(45, 24, 16, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-warm);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 16px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            color: var(--primary);
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-button {
+            background: var(--primary);
+            color: white !important;
+            padding: 10px 22px;
+            border-radius: 9999px;
+            font-weight: 700;
+            box-shadow: 0 4px 14px rgba(153, 27, 27, 0.3);
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .nav-button:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 620px;
+            padding: 80px 7%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            background: radial-gradient(circle at 10% 20%, rgba(217, 119, 6, 0.08) 0%, transparent 50%);
+        }
+
+        .small-title {
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 5vw, 64px);
+            line-height: 1.1;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+            background: linear-gradient(135deg, #991b1b, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            max-width: 520px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: 9999px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 20px rgba(153, 27, 27, 0.3);
+        }
+
+        .primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(153, 27, 27, 0.4);
+        }
+
+        .secondary {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .secondary:hover {
+            background: rgba(153, 27, 27, 0.05);
+        }
+
+        /* HERO IMAGE */
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 440px;
+            object-fit: cover;
+            border-radius: 28px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .image-badge {
+            position: absolute;
+            bottom: -20px;
+            left: 20px;
+            background: white;
+            padding: 16px 24px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            font-weight: 800;
+            border: 1px solid var(--border);
+        }
+
+        .image-badge span {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        /* OFFER */
+        .offer {
+            background: linear-gradient(135deg, #7f1d1d, #991b1b);
+            color: white;
+            padding: 20px 7%;
+            text-align: center;
+            font-size: 1.05rem;
+        }
+
+        .offer span {
+            color: #fbbf24;
+            font-weight: 800;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 90px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 50px;
+        }
+
+        .section-title small {
+            color: var(--primary);
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: var(--text-dark);
+            margin: 8px 0 12px;
+            font-weight: 800;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        /* MENU GRID */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .menu-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .menu-card img {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .menu-info {
+            padding: 24px;
+        }
+
+        .menu-info h3 {
+            color: var(--text-dark);
+            font-size: 20px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .menu-info p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .menu-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            color: var(--primary);
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .order-small {
+            background: var(--primary);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 9999px;
+            font-size: 13px;
+            font-weight: 700;
+            transition: background 0.2s;
+        }
+
+        .order-small:hover {
+            background: var(--primary-hover);
+        }
+
+        /* ABOUT */
+        .about-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image img {
+            height: 400px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .check-list {
+            list-style: none;
+            margin-top: 24px;
+        }
+
+        .check-list li {
+            margin-bottom: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .check-list li::before {
+            content: "✓";
+            color: white;
+            background: var(--primary);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, #7f1d1d, #991b1b);
+            color: white;
+            text-align: center;
+            padding: 90px 7%;
+        }
+
+        .cta h2 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 9999px;
+            font-weight: 800;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* FLOATING WHATSAPP */
+        .floating-whatsapp {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 2000;
+            background: #25D366;
+            color: white;
+            padding: 14px 22px;
+            border-radius: 9999px;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.05);
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 850px) {
+            .hero, .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links { display: none; }
+            .hero { text-align: center; }
+            .buttons { justify-content: center; }
+            .hero-image img { height: 320px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#home" class="logo">Spice<span>House</span></a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#contact" class="nav-button">Order Now</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="small-title">Authentic Indian Cuisine</div>
+            <h1>Taste the <span>Royal Biryani.</span></h1>
+            <p>Fragrant basmati rice, tender meat, aromatic spices, and generations of authentic culinary craft—served fresh daily.</p>
+            <div class="buttons">
+                <a href="#menu" class="button primary">Explore Menu</a>
+                <a href="#contact" class="button secondary">Order Now</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="hero-biryani.jpg" alt="Delicious royal biryani served hot">
+            <div class="image-badge">
+                ⭐ 4.9/5 Customer Rating<br>
+                <span>Top Recommended Biryani</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROMOTIONAL OFFER -->
+    <div class="offer">
+        🔥 Weekend Special: <span>10% OFF</span> on all family biryani combo orders!
+    </div>
+
+    <!-- MENU SECTION -->
+    <section class="menu" id="menu">
+        <div class="section-title">
+            <small>OUR MENU</small>
+            <h2>Made Fresh. Served Hot.</h2>
+            <p>A selection of customer favourites prepared with traditional recipes and hand-picked spices.</p>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-card">
+                <img src="chicken-biryani.jpg" alt="Chicken Biryani">
+                <div class="menu-info">
+                    <h3>Chicken Biryani</h3>
+                    <p>Aromatic basmati rice, tender chicken, and authentic Dum spices.</p>
+                    <div class="menu-bottom">
+                        <span class="price">₹249</span>
+                        <a href="https://wa.me/918548813585?text=Hello%20Zaid%2C%20I%20want%20to%20order%20Chicken%20Biryani." target="_blank" class="order-small">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=85" alt="Mutton Biryani">
+                <div class="menu-info">
+                    <h3>Mutton Biryani</h3>
+                    <p>Slow-cooked tender mutton layered with fragrant long-grain rice.</p>
+                    <div class="menu-bottom">
+                        <span class="price">₹329</span>
+                        <a href="https://wa.me/918548813585?text=Hello%20Zaid%2C%20I%20want%20to%20order%20Mutton%20Biryani." target="_blank" class="order-small">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=85" alt="Veg Biryani">
+                <div class="menu-info">
+                    <h3>Veg Biryani</h3>
+                    <p>Seasonal garden vegetables infused with rich aromatic spices.</p>
+                    <div class="menu-bottom">
+                        <span class="price">₹199</span>
+                        <a href="https://wa.me/918548813585?text=Hello%20Zaid%2C%20I%20want%20to%20order%20Veg%20Biryani." target="_blank" class="order-small">Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85" alt="Restaurant Interior">
+            </div>
+            <div class="about-text">
+                <small>OUR STORY</small>
+                <h2>Traditional Taste. Modern Dining.</h2>
+                <p>At Spice House, we believe great food builds everlasting memories. Our recipes honor classic Indian culinary heritage using fresh local ingredients.</p>
+                <ul class="check-list">
+                    <li>100% Fresh ingredients every day</li>
+                    <li>Time-tested traditional recipes</li>
+                    <li>Warm & hospitable environment</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta">
+        <h2>Craving Royal Flavours?</h2>
+        <p>Order your favorite biryani now and enjoy instant delivery to your doorstep.</p>
+        <a href="https://wa.me/918548813585?text=Hello%20Zaid%2C%20I%20want%20to%20order%20from%20Spice%20House." target="_blank" class="whatsapp-button">💬 Order on WhatsApp</a>
+    </section>
+
+    <!-- FLOATING WHATSAPP CTA -->
+    <a href="https://wa.me/918548813585?text=Hello%20Zaid%2C%20I%20saw%20your%20Spice%20House%20demo." target="_blank" class="floating-whatsapp">💬 Quick Order</a>
+
+</body>
+</html>

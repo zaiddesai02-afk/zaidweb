@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FORGE Fitness - modern gym and personal training demo website.">
+<title>FORGE Fitness | Train Strong. Live Strong.</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#0b0b0c;color:#f5f5f5;line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{width:100%;display:block}
+.container{width:min(1120px,92%);margin:auto}
+.nav{position:fixed;top:0;left:0;width:100%;z-index:50;background:rgba(8,8,9,.94);border-bottom:1px solid #222}
+.nav-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:25px;font-weight:900;letter-spacing:2px}
+.logo span{color:#e5a91b}
+.links{display:flex;gap:25px;align-items:center}
+.links a{font-size:14px;color:#ddd}
+.links a:hover{color:#e5a91b}
+.cta{background:#e5a91b;color:#111!important;padding:11px 18px;border-radius:4px;font-weight:800}
+.toggle{display:none;background:none;border:0;color:white;font-size:28px}
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 70px;background:linear-gradient(90deg,rgba(0,0,0,.84),rgba(0,0,0,.42)),url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=85") center/cover}
+.hero-content{max-width:720px}
+.tag{display:inline-block;color:#e5a91b;font-size:13px;font-weight:800;letter-spacing:3px;text-transform:uppercase;margin-bottom:15px}
+h1{font-size:clamp(48px,8vw,88px);line-height:.96;text-transform:uppercase;margin-bottom:22px}
+.hero p{font-size:18px;color:#ddd;max-width:600px;margin-bottom:28px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 24px;border:1px solid #e5a91b;border-radius:4px;font-weight:800}
+.btn.primary{background:#e5a91b;color:#111}
+.btn.secondary{color:#fff}
+.btn.secondary:hover{background:#fff;color:#111}
+section{padding:85px 0}
+.heading{text-align:center;max-width:680px;margin:0 auto 45px}
+.heading .tag{margin-bottom:5px}
+.heading h2{font-size:clamp(34px,5vw,52px);text-transform:uppercase;line-height:1.05;margin-bottom:10px}
+.heading p{color:#aaa}
+.stats{background:#e5a91b;color:#111}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stat strong{display:block;font-size:38px;line-height:1}
+.stat span{font-size:13px;font-weight:800;text-transform:uppercase}
+.dark2{background:#111113}
+.programs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.program{background:#18181b;border:1px solid #29292c;border-radius:7px;overflow:hidden}
+.program img{height:240px;object-fit:cover}
+.program-body{padding:22px}
+.program h3{font-size:24px;text-transform:uppercase;margin-bottom:8px}
+.program p{color:#aaa;font-size:14px;margin-bottom:16px}
+.more{color:#e5a91b;font-weight:800;font-size:13px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feature{padding:28px;background:#18181b;border:1px solid #29292c;border-radius:7px}
+.icon{font-size:32px;margin-bottom:10px}
+.feature h3{text-transform:uppercase;margin-bottom:7px}
+.feature p{color:#aaa;font-size:14px}
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.price-card{background:#151517;border:1px solid #29292c;border-radius:7px;padding:30px}
+.price-card.featured{border:2px solid #e5a91b}
+.price-card h3{text-transform:uppercase;font-size:22px}
+.price{font-size:42px;font-weight:900;margin:15px 0}
+.price small{font-size:13px;color:#999}
+.price-card ul{list-style:none;color:#bbb;margin:18px 0 25px}
+.price-card li{margin:9px 0}
+.price-card li::before{content:"✓ ";color:#e5a91b;font-weight:bold}
+.contact{background:linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.78)),url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1800&q=85") center/cover;text-align:center}
+.contact h2{font-size:clamp(35px,6vw,58px);text-transform:uppercase;line-height:1.05;margin-bottom:12px}
+.contact p{max-width:620px;color:#ddd;margin:0 auto 25px}
+footer{padding:30px 0;text-align:center;color:#888;background:#080809;font-size:13px}
+@media(max-width:800px){
+ .toggle{display:block}
+ .links{display:none;position:absolute;top:72px;left:0;width:100%;background:#0b0b0c;padding:8px 5%;flex-direction:column;align-items:stretch;gap:0}
+ .links.open{display:flex}
+ .links a{padding:13px 5px}
+ .links .cta{text-align:center;margin:5px 0 10px}
+ .stats-grid{grid-template-columns:repeat(2,1fr);gap:30px 10px}
+ .programs,.features,.pricing{grid-template-columns:1fr}
+ section{padding:70px 0}
+}
+@media(max-width:480px){
+ .hero{min-height:92vh}
+ .hero p{font-size:16px}
+ .buttons{flex-direction:column}
+ .btn{text-align:center}
+ .stats-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+<div class="container nav-inner">
+<a class="logo" href="#home">FORGE<span>FITNESS</span></a>
+<button class="toggle" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+<nav class="links" id="links">
+<a href="#home" onclick="closeMenu()">Home</a>
+<a href="#programs" onclick="closeMenu()">Programs</a>
+<a href="#pricing" onclick="closeMenu()">Membership</a>
+<a class="cta" href="#contact" onclick="closeMenu()">Start Training</a>
+</nav>
+</div>
+</header>
+
+<section class="hero" id="home">
+<div class="container hero-content">
+<div class="tag">Train With Purpose</div>
+<h1>Build Your Strongest Self.</h1>
+<p>Premium strength training, expert coaching and a community that pushes you forward. No shortcuts. Just progress.</p>
+<div class="buttons">
+<a class="btn primary" href="#pricing">View Memberships</a>
+<a class="btn secondary" href="#programs">Explore Programs</a>
+</div>
+</div>
+</section>
+
+<section class="stats">
+<div class="container stats-grid">
+<div class="stat"><strong>2,500+</strong><span>Members</span></div>
+<div class="stat"><strong>18</strong><span>Expert Trainers</span></div>
+<div class="stat"><strong>7</strong><span>Training Zones</span></div>
+<div class="stat"><strong>5★</strong><span>Member Rating</span></div>
+</div>
+</section>
+
+<section id="programs" class="dark2">
+<div class="container">
+<div class="heading"><div class="tag">Train Your Way</div><h2>Programs Built For Results</h2><p>Whether you're starting from zero or chasing your next personal best, we've got a plan for you.</p></div>
+<div class="programs">
+<article class="program"><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=900&q=85" alt="Strength training"><div class="program-body"><h3>Strength</h3><p>Progressive training focused on building strength, power and confidence.</p><span class="more">LEARN MORE →</span></div></article>
+<article class="program"><img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=900&q=85" alt="Functional fitness"><div class="program-body"><h3>Functional</h3><p>Improve mobility, conditioning and everyday performance with dynamic workouts.</p><span class="more">LEARN MORE →</span></div></article>
+<article class="program"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=85" alt="Personal training"><div class="program-body"><h3>Personal Training</h3><p>One-to-one coaching, customized plans and accountability from expert trainers.</p><span class="more">LEARN MORE →</span></div></article>
+</div>
+</div>
+</section>
+
+<section class="dark2">
+<div class="container">
+<div class="heading"><div class="tag">More Than A Gym</div><h2>Everything You Need To Progress</h2></div>
+<div class="features">
+<div class="feature"><div class="icon">🏋️</div><h3>Premium Equipment</h3><p>Modern strength and cardio equipment across dedicated training zones.</p></div>
+<div class="feature"><div class="icon">🔥</div><h3>High Energy</h3><p>A motivating environment designed to keep you moving and improving.</p></div>
+<div class="feature"><div class="icon">🥗</div><h3>Fitness Guidance</h3><p>Training and lifestyle guidance to help you stay consistent.</p></div>
+</div>
+</div>
+</section>
+
+<section id="pricing">
+<div class="container">
+<div class="heading"><div class="tag">Membership</div><h2>Choose Your Level</h2><p>Simple plans for different goals. Start today and upgrade whenever you're ready.</p></div>
+<div class="pricing">
+<div class="price-card"><h3>Starter</h3><div class="price">₹999 <small>/ month</small></div><ul><li>Gym access</li><li>Basic equipment orientation</li><li>Locker access</li></ul><a class="btn secondary" href="#contact">Join Now</a></div>
+<div class="price-card featured"><h3>Pro</h3><div class="price">₹1,999 <small>/ month</small></div><ul><li>24/7 gym access</li><li>2 trainer sessions/month</li><li>Fitness assessment</li></ul><a class="btn primary" href="#contact">Join Now</a></div>
+<div class="price-card"><h3>Elite</h3><div class="price">₹3,499 <small>/ month</small></div><ul><li>24/7 gym access</li><li>Weekly personal training</li><li>Custom fitness plan</li></ul><a class="btn secondary" href="#contact">Join Now</a></div>
+</div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="container">
+<div class="tag">Your Next Chapter Starts Here</div>
+<h2>Ready To Get Stronger?</h2>
+<p>Book a free fitness consultation and discover the right training plan for your goals.</p>
+<a class="btn primary" href="tel:+919876543210">Call For Free Consultation</a>
+</div>
+</section>
+
+<footer><div class="container"><strong>FORGE FITNESS</strong><p>© 2026 FORGE Fitness. Demo website created for portfolio purposes.</p></div></footer>
+
+<script>
+function toggleMenu(){document.getElementById("links").classList.toggle("open")}
+function closeMenu(){document.getElementById("links").classList.remove("open")}
+</script>
+</body>
+</html>
