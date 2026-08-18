@@ -3,1147 +3,175 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta name="description" content="Northstar Studio - professional local business website demo by ZaidWeb.">
-  <title>Northstar Studio | Business Demo</title>
-
+  <title>Apex Workspace | Modern Office</title>
   <style>
-    :root{
-      --ink:#10233f;
-      --blue:#2864dc;
-      --sky:#eaf2ff;
-      --muted:#62728a;
-      --white:#ffffff;
-      --light:#f7faff;
-    }
-
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      margin:0;
-      color:var(--ink);
-      font-family:Arial,Helvetica,sans-serif;
-      line-height:1.55;
-      background:white;
-    }
-
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
-
-    img{
-      width:100%;
-      display:block;
-    }
-
-    .wrap{
-      width:min(1120px,90%);
-      margin:auto;
-    }
-
-    /* =========================
-       NAVBAR
-    ========================= */
-
-    .hero{
-      background:
-        linear-gradient(
-          120deg,
-          #f5f9ff 0%,
-          #e6f0ff 100%
-        );
-      overflow:hidden;
-      padding-bottom:80px;
-    }
-
-    .nav{
-      min-height:75px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-
-    .brand{
-      font-size:23px;
-      font-weight:800;
-    }
-
-    .brand b{
-      color:var(--blue);
-    }
-
-    .navlinks{
-      display:flex;
-      gap:28px;
-      align-items:center;
-      font-weight:700;
-      color:#415168;
-    }
-
-    .navlinks a:hover{
-      color:var(--blue);
-    }
-
-    .btn{
-      display:inline-block;
-      background:var(--blue);
-      color:white;
-      padding:13px 20px;
-      border-radius:9px;
-      font-weight:800;
-      box-shadow:0 9px 20px #2864dc35;
-      transition:.25s;
-    }
-
-    .btn:hover{
-      transform:translateY(-2px);
-    }
-
-    .mobile-menu{
-      display:none;
-      border:0;
-      background:none;
-      font-size:28px;
-      cursor:pointer;
-      color:var(--ink);
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:55px;
-      align-items:center;
-      padding:70px 0 20px;
-    }
-
-    .eyebrow{
-      font-size:12px;
-      letter-spacing:1.8px;
-      font-weight:800;
-      color:var(--blue);
-    }
-
-    h1{
-      font-size:clamp(42px,6vw,68px);
-      letter-spacing:-2px;
-      line-height:1.03;
-      margin:14px 0 20px;
-    }
-
-    .hero-text{
-      color:var(--muted);
-      font-size:17px;
-      max-width:600px;
-      margin-bottom:28px;
-    }
-
-    .hero-buttons{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-
-    .btn-outline{
-      display:inline-block;
-      padding:13px 20px;
-      border:1px solid #cbd8eb;
-      border-radius:9px;
-      font-weight:800;
-      color:var(--ink);
-      background:white;
-    }
-
-    .btn-outline:hover{
-      border-color:var(--blue);
-      color:var(--blue);
-    }
-
-    .hero-card{
-      position:relative;
-      background:white;
-      border-radius:22px;
-      padding:18px;
-      box-shadow:0 28px 55px #18467a24;
-    }
-
-    .hero-card img{
-      height:340px;
-      object-fit:cover;
-      border-radius:13px;
-    }
-
-    .badge{
-      position:absolute;
-      left:-18px;
-      bottom:40px;
-      background:white;
-      padding:15px 20px;
-      border-radius:13px;
-      box-shadow:0 10px 25px #10233f22;
-      font-weight:800;
-    }
-
-    .badge span{
-      color:var(--blue);
-      font-size:22px;
-    }
-
-    /* =========================
-       STATS
-    ========================= */
-
-    .stats{
-      padding:38px 0;
-      background:var(--ink);
-      color:white;
-    }
-
-    .stats-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      text-align:center;
-      gap:20px;
-    }
-
-    .stats strong{
-      font-size:30px;
-      display:block;
-    }
-
-    .stats small{
-      color:#b6c7e2;
-    }
-
-    /* =========================
-       GENERAL SECTIONS
-    ========================= */
-
-    .section{
-      padding:88px 0;
-    }
-
-    .light-section{
-      background:var(--light);
-    }
-
-    .heading{
-      max-width:650px;
-      margin-bottom:42px;
-    }
-
-    .heading.center{
-      text-align:center;
-      margin-left:auto;
-      margin-right:auto;
-    }
-
-    .heading h2{
-      font-size:clamp(32px,5vw,42px);
-      line-height:1.1;
-      margin:7px 0 12px;
-    }
-
-    .heading p{
-      color:var(--muted);
-      font-size:17px;
-    }
-
-    /* =========================
-       SERVICES
-    ========================= */
-
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
-
-    .card{
-      padding:28px;
-      border:1px solid #dce6f5;
-      border-radius:15px;
-      background:white;
-      transition:.25s;
-    }
-
-    .card:hover{
-      transform:translateY(-5px);
-      box-shadow:0 15px 35px #10233f12;
-    }
-
-    .icon{
-      font-size:25px;
-      background:var(--sky);
-      padding:11px;
-      border-radius:10px;
-      display:inline-block;
-    }
-
-    .card h3{
-      margin:18px 0 8px;
-      font-size:20px;
-    }
-
-    .card p{
-      color:var(--muted);
-    }
-
-    /* =========================
-       ABOUT
-    ========================= */
-
-    .about-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:50px;
-      align-items:center;
-    }
-
-    .about-image{
-      border-radius:18px;
-      overflow:hidden;
-      box-shadow:0 20px 45px #10233f18;
-    }
-
-    .about-image img{
-      height:420px;
-      object-fit:cover;
-    }
-
-    .about-text h2{
-      font-size:40px;
-      line-height:1.1;
-      margin:8px 0 16px;
-    }
-
-    .about-text p{
-      color:var(--muted);
-      margin-bottom:16px;
-    }
-
-    .check{
-      margin:12px 0;
-      font-weight:700;
-    }
-
-    .check span{
-      color:var(--blue);
-      margin-right:8px;
-    }
-
-    /* =========================
-       WORK
-    ========================= */
-
-    .work-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
-
-    .work-card{
-      background:white;
-      border:1px solid #dce6f5;
-      border-radius:15px;
-      overflow:hidden;
-    }
-
-    .work-card img{
-      height:220px;
-      object-fit:cover;
-    }
-
-    .work-content{
-      padding:22px;
-    }
-
-    .work-content h3{
-      margin-bottom:6px;
-    }
-
-    .work-content p{
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    /* =========================
-       TESTIMONIALS
-    ========================= */
-
-    .testimonials{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
-
-    .testimonial{
-      background:white;
-      padding:28px;
-      border-radius:15px;
-      border:1px solid #dce6f5;
-    }
-
-    .stars{
-      color:#f0a500;
-      margin-bottom:12px;
-      letter-spacing:2px;
-    }
-
-    .testimonial p{
-      color:var(--muted);
-      font-style:italic;
-      margin-bottom:18px;
-    }
-
-    .testimonial strong{
-      font-size:14px;
-    }
-
-    /* =========================
-       CTA
-    ========================= */
-
-    .cta{
-      background:var(--ink);
-      color:white;
-      text-align:center;
-      padding:80px 18px;
-    }
-
-    .cta h2{
-      font-size:clamp(34px,5vw,48px);
-      margin-bottom:12px;
-    }
-
-    .cta p{
-      color:#c1cce0;
-      margin:0 auto 27px;
-      max-width:550px;
-    }
-
-    .whatsapp{
-      background:#25D366;
-      color:white;
-      box-shadow:none;
-    }
-
-    .whatsapp:hover{
-      background:#1fbd59;
-    }
-
-    /* =========================
-       CONTACT
-    ========================= */
-
-    .contact-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:20px;
-    }
-
-    .contact-card{
-      background:white;
-      padding:30px;
-      border:1px solid #dce6f5;
-      border-radius:15px;
-    }
-
-    .contact-card h3{
-      font-size:25px;
-      margin-bottom:18px;
-    }
-
-    .contact-item{
-      margin:15px 0;
-      color:var(--muted);
-    }
-
-    .contact-item strong{
-      display:block;
-      color:var(--ink);
-      margin-bottom:3px;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer{
-      text-align:center;
-      padding:25px;
-      color:#71809a;
-      font-size:14px;
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media(max-width:800px){
-
-      .navlinks{
-        display:none;
-        position:absolute;
-        top:75px;
-        left:0;
-        width:100%;
-        background:white;
-        padding:10px 5%;
-        flex-direction:column;
-        align-items:stretch;
-        gap:0;
-        box-shadow:0 10px 20px #10233f12;
-      }
-
-      .navlinks.active{
-        display:flex;
-      }
-
-      .navlinks a{
-        padding:13px 5px;
-      }
-
-      .navlinks .btn{
-        text-align:center;
-        margin:7px 0 10px;
-      }
-
-      .mobile-menu{
-        display:block;
-      }
-
-      .hero-grid{
-        grid-template-columns:1fr;
-        padding-top:45px;
-        gap:35px;
-      }
-
-      .hero-card img{
-        height:270px;
-      }
-
-      .badge{
-        left:12px;
-        bottom:25px;
-      }
-
-      .stats-grid{
-        grid-template-columns:1fr;
-        gap:22px;
-      }
-
-      .cards,
-      .work-grid,
-      .testimonials{
-        grid-template-columns:1fr;
-      }
-
-      .about-grid,
-      .contact-grid{
-        grid-template-columns:1fr;
-      }
-
-      .about-image img{
-        height:320px;
-      }
-
-      .section{
-        padding:65px 0;
-      }
-    }
-
-    @media(max-width:480px){
-
-      .hero-buttons{
-        flex-direction:column;
-      }
-
-      .hero-buttons a{
-        text-align:center;
-      }
-
-      h1{
-        letter-spacing:-1px;
-      }
-
-      .about-text h2{
-        font-size:34px;
-      }
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --border: #334155;
+      --accent: #2563eb;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    img { width: 100%; display: block; border-radius: 12px; object-fit: cover; }
+
+    .wrap { width: min(1100px, 90%); margin: auto; }
+    .btn { display: inline-block; background: var(--accent); color: white; padding: 12px 24px; border-radius: 8px; font-weight: 700; transition: 0.2s; }
+    .btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+    /* NAV */
+    nav { min-height: 70px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+    .brand { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; }
+    .brand span { color: var(--accent); }
+    .links { display: flex; gap: 24px; font-size: 14px; font-weight: 600; color: var(--muted); }
+    .links a:hover { color: var(--text); }
+
+    /* HERO */
+    .hero { padding: 80px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    h1 { font-size: clamp(36px, 5vw, 56px); line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px; }
+    p { color: var(--muted); margin-bottom: 24px; }
+    .hero img { height: 380px; }
+
+    /* SECTIONS */
+    section { padding: 80px 0; }
+    .heading { text-align: center; max-width: 500px; margin: 0 auto 40px; }
+    .heading h2 { font-size: 32px; margin-bottom: 8px; }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card { background: var(--surface); border: 1px solid var(--border); padding: 24px; border-radius: 12px; }
+    .card h3 { margin-bottom: 8px; }
+
+    .gallery-card img { height: 220px; margin-bottom: 16px; }
+
+    /* CONTACT / LOCATION */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .contact-card { background: var(--surface); border: 1px solid var(--border); padding: 32px; border-radius: 16px; }
+    .contact-item { margin-bottom: 16px; }
+    .contact-item strong { display: block; color: var(--text); font-size: 14px; }
+    .contact-item span { color: var(--muted); font-size: 15px; }
+
+    footer { text-align: center; padding: 30px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--border); }
+
+    @media (max-width: 768px) {
+      .hero, .grid-3, .contact-grid { grid-template-columns: 1fr; }
+      .links { display: none; }
     }
   </style>
 </head>
-
 <body>
 
-<header class="hero" id="home">
-
-  <div class="wrap nav">
-
-    <a class="brand" href="#home">
-      Northstar<b>.</b>
-    </a>
-
-    <button class="mobile-menu" onclick="toggleMenu()" aria-label="Open navigation">
-      ☰
-    </button>
-
-    <nav class="navlinks" id="navlinks">
-
-      <a href="#services" onclick="closeMenu()">Services</a>
-      <a href="#about" onclick="closeMenu()">About</a>
-      <a href="#work" onclick="closeMenu()">Work</a>
-      <a href="#contact" onclick="closeMenu()">Contact</a>
-
-      <a class="btn" href="#contact" onclick="closeMenu()">
-        Get a Quote
-      </a>
-
+  <div class="wrap">
+    <!-- NAV -->
+    <nav>
+      <a class="brand" href="#">Apex<span>Office.</span></a>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#tour">Tour</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#contact">Visit Us</a>
+      </div>
+      <a class="btn" href="#contact">Schedule Visit</a>
     </nav>
 
+    <!-- HERO -->
+    <header class="hero" id="about">
+      <div>
+        <h1>A space designed for productivity & collaboration.</h1>
+        <p>Welcome to our central headquarters. Built with sustainable materials, open layouts, and high-speed infrastructure to support modern teams.</p>
+        <a class="btn" href="#tour">Explore the Space</a>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Main office space">
+      </div>
+    </header>
+
+    <!-- TOUR GALLERY -->
+    <section id="tour">
+      <div class="heading">
+        <h2>Office Tour</h2>
+        <p>Take a look inside our workspace environments.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card gallery-card">
+          <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=600&q=80" alt="Open Desk Area">
+          <h3>Open Workspace</h3>
+          <p>Ergonomic desks and natural lighting for individual focus.</p>
+        </div>
+        <div class="card gallery-card">
+          <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=600&q=80" alt="Conference Room">
+          <h3>Conference Rooms</h3>
+          <p>Fully equipped video conferencing suites for team meetings.</p>
+        </div>
+        <div class="card gallery-card">
+          <img src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=600&q=80" alt="Lounge Area">
+          <h3>Breakout Lounge</h3>
+          <p>Relaxed zones built for informal chats and coffee breaks.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AMENITIES -->
+    <section id="amenities">
+      <div class="heading">
+        <h2>Building Amenities</h2>
+        <p>Everything needed for a modern, comfortable workday.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>⚡ Gigabit Fiber WiFi</h3>
+          <p>Redundant high-speed connection with 99.9% uptime.</p>
+        </div>
+        <div class="card">
+          <h3>🔒 24/7 Secure Access</h3>
+          <p>Keycard access control and round-the-clock security team.</p>
+        </div>
+        <div class="card">
+          <h3>☕ Gourmet Cafe</h3>
+          <p>In-house barista serving organic coffee and healthy snacks daily.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISIT / CONTACT -->
+    <section id="contact">
+      <div class="heading">
+        <h2>Visit Our Headquarters</h2>
+        <p>We'd love to show you around in person.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-item">
+            <strong>📍 Address</strong>
+            <span>100 Innovation Way, Suite 400<br>Tech District, CA 94103</span>
+          </div>
+          <div class="contact-item">
+            <strong>🕒 Operating Hours</strong>
+            <span>Monday – Friday: 8:00 AM – 7:00 PM<br>Weekends: Keycard Access Only</span>
+          </div>
+          <div class="contact-item">
+            <strong>✉️ Contact</strong>
+            <span>reception@apexworkspace.com<br>+1 (555) 019-2834</span>
+          </div>
+        </div>
+        <div class="contact-card" style="display: flex; flex-direction: column; justify-content: center;">
+          <h3>Book a Private Tour</h3>
+          <p>Schedule a walk-through with our operations team to check desk availability or event space rentals.</p>
+          <a class="btn" href="mailto:reception@apexworkspace.com" style="margin-top: 16px; text-align: center;">Send an Inquiry</a>
+        </div>
+      </div>
+    </section>
   </div>
 
-  <main class="wrap hero-grid">
-
-    <div>
-
-      <div class="eyebrow">
-        LOCAL BUSINESS • EST. 2012
-      </div>
-
-      <h1>
-        Work that moves your business forward.
-      </h1>
-
-      <p class="hero-text">
-        Northstar helps growing teams turn big ideas into memorable
-        brands, useful digital experiences and lasting customer
-        relationships.
-      </p>
-
-      <div class="hero-buttons">
-
-        <a class="btn" href="#contact">
-          Start a Project
-        </a>
-
-        <a class="btn-outline" href="#services">
-          Explore Services
-        </a>
-
-      </div>
-
+  <footer>
+    <div class="wrap">
+      &copy; 2026 Apex Workspace Inc. All rights reserved.
     </div>
-
-    <div class="hero-card">
-
-      <img
-        src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85"
-        alt="Modern business office"
-      >
-
-      <div class="badge">
-        <span>12+</span>
-        <br>
-        years building better
-      </div>
-
-    </div>
-
-  </main>
-
-</header>
-
-
-<!-- STATS -->
-
-<section class="stats">
-
-  <div class="wrap stats-grid">
-
-    <div>
-      <strong>240+</strong>
-      <small>Projects Delivered</small>
-    </div>
-
-    <div>
-      <strong>98%</strong>
-      <small>Happy Clients</small>
-    </div>
-
-    <div>
-      <strong>24 hrs</strong>
-      <small>Average Response Time</small>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- SERVICES -->
-
-<section class="section" id="services">
-
-  <div class="wrap">
-
-    <div class="heading center">
-
-      <div class="eyebrow">
-        WHAT WE DO
-      </div>
-
-      <h2>
-        Clear strategy. Beautiful execution.
-      </h2>
-
-      <p>
-        Everything a modern local business needs to make
-        a confident first impression online.
-      </p>
-
-    </div>
-
-
-    <div class="cards">
-
-      <article class="card">
-
-        <span class="icon">✦</span>
-
-        <h3>
-          Brand Strategy
-        </h3>
-
-        <p>
-          Positioning and identity that make your
-          business easy to remember.
-        </p>
-
-      </article>
-
-
-      <article class="card">
-
-        <span class="icon">◫</span>
-
-        <h3>
-          Digital Experiences
-        </h3>
-
-        <p>
-          Fast, accessible websites designed to turn
-          visits into enquiries.
-        </p>
-
-      </article>
-
-
-      <article class="card">
-
-        <span class="icon">↗</span>
-
-        <h3>
-          Growth Support
-        </h3>
-
-        <p>
-          Practical, ongoing improvements that keep
-          your business moving.
-        </p>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section class="section light-section" id="about">
-
-  <div class="wrap about-grid">
-
-    <div class="about-image">
-
-      <img
-        src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=85"
-        alt="Professional workspace"
-      >
-
-    </div>
-
-
-    <div class="about-text">
-
-      <div class="eyebrow">
-        ABOUT NORTHSTAR
-      </div>
-
-      <h2>
-        We make good businesses look as good online.
-      </h2>
-
-      <p>
-        Your website is often the first interaction a customer
-        has with your business. We help make that first impression
-        count.
-      </p>
-
-      <div class="check">
-        <span>✓</span>
-        Mobile-first websites
-      </div>
-
-      <div class="check">
-        <span>✓</span>
-        Clear customer journeys
-      </div>
-
-      <div class="check">
-        <span>✓</span>
-        Fast and modern design
-      </div>
-
-      <div class="check">
-        <span>✓</span>
-        Built around your business goals
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- WORK -->
-
-<section class="section" id="work">
-
-  <div class="wrap">
-
-    <div class="heading center">
-
-      <div class="eyebrow">
-        OUR WORK
-      </div>
-
-      <h2>
-        Designed to make businesses stand out.
-      </h2>
-
-      <p>
-        A few examples of the kind of digital experiences
-        we can create for growing businesses.
-      </p>
-
-    </div>
-
-
-    <div class="work-grid">
-
-      <article class="work-card">
-
-        <img
-          src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85"
-          alt="Business team"
-        >
-
-        <div class="work-content">
-
-          <h3>
-            Business Consulting
-          </h3>
-
-          <p>
-            A professional website designed to build
-            trust and generate enquiries.
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <article class="work-card">
-
-        <img
-          src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=85"
-          alt="Creative team"
-        >
-
-        <div class="work-content">
-
-          <h3>
-            Creative Studio
-          </h3>
-
-          <p>
-            A clean visual identity and website for
-            a modern creative business.
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <article class="work-card">
-
-        <img
-          src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=85"
-          alt="Professional meeting"
-        >
-
-        <div class="work-content">
-
-          <h3>
-            Local Services
-          </h3>
-
-          <p>
-            A conversion-focused website designed
-            to turn visitors into customers.
-          </p>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- TESTIMONIALS -->
-
-<section class="section light-section">
-
-  <div class="wrap">
-
-    <div class="heading center">
-
-      <div class="eyebrow">
-        CLIENT FEEDBACK
-      </div>
-
-      <h2>
-        What our clients say.
-      </h2>
-
-    </div>
-
-
-    <div class="testimonials">
-
-      <article class="testimonial">
-
-        <div class="stars">
-          ★★★★★
-        </div>
-
-        <p>
-          “Northstar completely changed how professional
-          our business looks online. Customers noticed immediately.”
-        </p>
-
-        <strong>
-          — Arjun Mehta
-        </strong>
-
-      </article>
-
-
-      <article class="testimonial">
-
-        <div class="stars">
-          ★★★★★
-        </div>
-
-        <p>
-          “The website is clean, fast and incredibly easy
-          for our customers to use.”
-        </p>
-
-        <strong>
-          — Sarah Patel
-        </strong>
-
-      </article>
-
-
-      <article class="testimonial">
-
-        <div class="stars">
-          ★★★★★
-        </div>
-
-        <p>
-          “Professional from start to finish. We started
-          getting more enquiries almost immediately.”
-        </p>
-
-        <strong>
-          — Rahul Shah
-        </strong>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- CTA -->
-
-<section class="cta" id="contact">
-
-  <h2>
-    Let's make your next move count.
-  </h2>
-
-  <p>
-    Tell us what you're building and we'll be in touch
-    within one business day.
-  </p>
-
-  <a
-    class="btn whatsapp"
-    href="https://wa.me/918548813585?text=Hello%20Zaid%2C%20I%20like%20the%20Northstar%20business%20demo."
-    target="_blank"
-    rel="noopener"
-  >
-    💬 Chat on WhatsApp
-  </a>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="section">
-
-  <div class="wrap">
-
-    <div class="heading center">
-
-      <div class="eyebrow">
-        LET'S TALK
-      </div>
-
-      <h2>
-        Have a project in mind?
-      </h2>
-
-      <p>
-        Let's discuss your business and build something
-        that helps you get more customers.
-      </p>
-
-    </div>
-
-
-    <div class="contact-grid">
-
-      <div class="contact-card">
-
-        <h3>
-          Why choose Northstar?
-        </h3>
-
-        <div class="contact-item">
-          <strong>⚡ Fast Delivery</strong>
-          Get your website online without unnecessary delays.
-        </div>
-
-        <div class="contact-item">
-          <strong>📱 Mobile First</strong>
-          Your customers get a great experience on every device.
-        </div>
-
-        <div class="contact-item">
-          <strong>🎯 Conversion Focused</strong>
-          Every section is designed with your customers in mind.
-        </div>
-
-      </div>
-
-
-      <div class="contact-card">
-
-        <h3>
-          Start your project
-        </h3>
-
-        <div class="contact-item">
-          <strong>💬 WhatsApp</strong>
-          Message us for a quick discussion about your project.
-        </div>
-
-        <a
-          class="btn whatsapp"
-          href="https://wa.me/918548813585?text=Hello%20Zaid%2C%20I%20want%20to%20discuss%20a%20website%20for%20my%20business."
-          target="_blank"
-          rel="noopener"
-        >
-          Message on WhatsApp
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<footer>
-  Northstar Studio — A ZaidWeb demonstration website
-</footer>
-
-
-<script>
-
-function toggleMenu(){
-
-  document
-    .getElementById("navlinks")
-    .classList
-    .toggle("active");
-
-}
-
-function closeMenu(){
-
-  document
-    .getElementById("navlinks")
-    .classList
-    .remove("active");
-
-}
-
-</script>
+  </footer>
 
 </body>
 </html>
