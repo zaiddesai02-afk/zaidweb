@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -48,6 +48,12 @@ section{padding:85px 0}
 .program h3{font-size:24px;text-transform:uppercase;margin-bottom:8px}
 .program p{color:#aaa;font-size:14px;margin-bottom:16px}
 .more{color:#e5a91b;font-weight:800;font-size:13px}
+.trainers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.trainer{background:#151517;border-radius:7px;overflow:hidden}
+.trainer img{height:350px;object-fit:cover}
+.trainer-body{padding:20px}
+.trainer h3{font-size:22px;text-transform:uppercase}
+.trainer p{color:#e5a91b;font-size:13px;font-weight:800;margin-top:3px}
 .features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .feature{padding:28px;background:#18181b;border:1px solid #29292c;border-radius:7px}
 .icon{font-size:32px;margin-bottom:10px}
@@ -73,7 +79,8 @@ footer{padding:30px 0;text-align:center;color:#888;background:#080809;font-size:
  .links a{padding:13px 5px}
  .links .cta{text-align:center;margin:5px 0 10px}
  .stats-grid{grid-template-columns:repeat(2,1fr);gap:30px 10px}
- .programs,.features,.pricing{grid-template-columns:1fr}
+ .programs,.trainers,.features,.pricing{grid-template-columns:1fr}
+ .trainer img{height:390px}
  section{padding:70px 0}
 }
 @media(max-width:480px){
@@ -94,6 +101,7 @@ footer{padding:30px 0;text-align:center;color:#888;background:#080809;font-size:
 <nav class="links" id="links">
 <a href="#home" onclick="closeMenu()">Home</a>
 <a href="#programs" onclick="closeMenu()">Programs</a>
+<a href="#trainers" onclick="closeMenu()">Trainers</a>
 <a href="#pricing" onclick="closeMenu()">Membership</a>
 <a class="cta" href="#contact" onclick="closeMenu()">Start Training</a>
 </nav>
@@ -117,7 +125,7 @@ footer{padding:30px 0;text-align:center;color:#888;background:#080809;font-size:
 <div class="stat"><strong>2,500+</strong><span>Members</span></div>
 <div class="stat"><strong>18</strong><span>Expert Trainers</span></div>
 <div class="stat"><strong>7</strong><span>Training Zones</span></div>
-<div class="stat"><strong>4.8★</strong><span>Member Rating</span></div>
+<div class="stat"><strong>5★</strong><span>Member Rating</span></div>
 </div>
 </section>
 
@@ -128,6 +136,17 @@ footer{padding:30px 0;text-align:center;color:#888;background:#080809;font-size:
 <article class="program"><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=900&q=85" alt="Strength training"><div class="program-body"><h3>Strength</h3><p>Progressive training focused on building strength, power and confidence.</p><span class="more">LEARN MORE →</span></div></article>
 <article class="program"><img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=900&q=85" alt="Functional fitness"><div class="program-body"><h3>Functional</h3><p>Improve mobility, conditioning and everyday performance with dynamic workouts.</p><span class="more">LEARN MORE →</span></div></article>
 <article class="program"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=85" alt="Personal training"><div class="program-body"><h3>Personal Training</h3><p>One-to-one coaching, customized plans and accountability from expert trainers.</p><span class="more">LEARN MORE →</span></div></article>
+</div>
+</div>
+</section>
+
+<section id="trainers">
+<div class="container">
+<div class="heading"><div class="tag">Meet The Team</div><h2>Coaches Who Care About Your Progress</h2><p>Real coaching. Real accountability. A team focused on helping you become stronger.</p></div>
+<div class="trainers">
+<article class="trainer"><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=85" alt="Fitness trainer"><div class="trainer-body"><h3>Alex Carter</h3><p>HEAD STRENGTH COACH</p></div></article>
+<article class="trainer"><img src="https://images.unsplash.com/photo-1609899537878-88d5e4c0f7f5?auto=format&fit=crop&w=900&q=85" alt="Fitness coach"><div class="trainer-body"><h3>Maya Singh</h3><p>FITNESS COACH</p></div></article>
+<article class="trainer"><img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=900&q=85" alt="Personal trainer"><div class="trainer-body"><h3>Ryan Brooks</h3><p>PERSONAL TRAINER</p></div></article>
 </div>
 </div>
 </section>
