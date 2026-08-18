@@ -1,2140 +1,576 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="ZaidWeb creates modern, professional and mobile-friendly websites for businesses and individuals.">
-
-    <title>ZaidWeb | Professional Websites</title>
-
-
-    <style>
-
-        /* =========================
-           GENERAL
-        ========================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background: #f8fafc;
-            color: #172033;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        section {
-            padding: 90px 7%;
-            scroll-margin-top: 90px;
-        }
-
-
-        /* =========================
-           NAVIGATION
-        ========================= */
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            background: rgba(255, 255, 255, 0.97);
-
-            border-bottom: 1px solid #e5e7eb;
-
-            padding: 18px 7%;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            color: #111827;
-        }
-
-        .logo span {
-            color: #2563eb;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: #374151;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #2563eb;
-        }
-
-        .nav-button {
-            background: #2563eb;
-            color: white !important;
-            padding: 10px 18px;
-            border-radius: 8px;
-        }
-
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 680px;
-
-            padding: 100px 7%;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 60px;
-
-            background: linear-gradient(
-                135deg,
-                #eff6ff,
-                #ffffff
-            );
-        }
-
-        .hero-content {
-            max-width: 650px;
-        }
-
-        .small-title {
-            color: #2563eb;
-
-            font-size: 15px;
-
-            font-weight: 800;
-
-            letter-spacing: 2px;
-
-            margin-bottom: 18px;
-        }
-
-        .hero h1 {
-            font-size: clamp(42px, 6vw, 72px);
-
-            line-height: 1.05;
-
-            margin-bottom: 25px;
-
-            color: #111827;
-        }
-
-        .hero h1 span {
-            color: #2563eb;
-        }
-
-        .hero p {
-            font-size: 20px;
-
-            color: #4b5563;
-
-            max-width: 600px;
-
-            margin-bottom: 32px;
-        }
-
-        .buttons {
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 15px;
-        }
-
-        .button {
-            display: inline-block;
-
-            padding: 15px 25px;
-
-            border-radius: 9px;
-
-            font-weight: 700;
-
-            transition: 0.3s;
-
-            cursor: pointer;
-        }
-
-        .primary {
-            background: #2563eb;
-
-            color: white;
-
-            border: none;
-        }
-
-        .primary:hover {
-            background: #1d4ed8;
-
-            transform: translateY(-2px);
-        }
-
-        .secondary {
-            border: 2px solid #2563eb;
-
-            color: #2563eb;
-
-            background: white;
-        }
-
-        .secondary:hover {
-            background: #eff6ff;
-        }
-
-
-        /* =========================
-           HERO WEBSITE PREVIEW
-        ========================= */
-
-        .hero-card {
-            width: 420px;
-
-            max-width: 100%;
-
-            background: white;
-
-            border-radius: 20px;
-
-            padding: 30px;
-
-            box-shadow:
-                0 20px 60px
-                rgba(15, 23, 42, 0.12);
-        }
-
-        .browser {
-            border: 1px solid #e5e7eb;
-
-            border-radius: 12px;
-
-            overflow: hidden;
-        }
-
-        .browser-top {
-            padding: 12px;
-
-            background: #f1f5f9;
-
-            display: flex;
-
-            gap: 6px;
-        }
-
-        .dot {
-            width: 10px;
-
-            height: 10px;
-
-            border-radius: 50%;
-
-            background: #94a3b8;
-        }
-
-        .browser-content {
-            padding: 30px 20px;
-
-            min-height: 240px;
-
-            background:
-                linear-gradient(
-                    160deg,
-                    #dbeafe,
-                    #ffffff
-                );
-        }
-
-        .fake-line {
-            height: 12px;
-
-            background: #2563eb;
-
-            width: 55%;
-
-            border-radius: 10px;
-
-            margin-bottom: 15px;
-        }
-
-        .fake-line.small {
-            width: 80%;
-
-            background: #cbd5e1;
-        }
-
-        .fake-boxes {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 10px;
-
-            margin-top: 30px;
-        }
-
-        .fake-box {
-            height: 70px;
-
-            border-radius: 8px;
-
-            background: #e2e8f0;
-        }
-
-
-        /* =========================
-           SECTION TITLES
-        ========================= */
-
-        .section-title {
-            text-align: center;
-
-            max-width: 700px;
-
-            margin: 0 auto 55px;
-        }
-
-        .section-title h2 {
-            font-size: 42px;
-
-            margin-bottom: 12px;
-
-            color: #111827;
-        }
-
-        .section-title p {
-            color: #6b7280;
-
-            font-size: 17px;
-        }
-
-
-        /* =========================
-           SERVICES
-        ========================= */
-
-        .services {
-            background: white;
-        }
-
-        .service-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 25px;
-        }
-
-        .service-card {
-            padding: 35px 28px;
-
-            border:
-                1px solid #e5e7eb;
-
-            border-radius: 16px;
-
-            background: white;
-
-            transition: 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-
-            box-shadow:
-                0 15px 35px
-                rgba(15, 23, 42, 0.08);
-        }
-
-        .icon {
-            font-size: 38px;
-
-            margin-bottom: 18px;
-        }
-
-        .service-card h3 {
-            margin-bottom: 10px;
-
-            font-size: 22px;
-        }
-
-        .service-card p {
-            color: #6b7280;
-        }
-
-
-        /* =========================
-           PORTFOLIO
-        ========================= */
-
-        .portfolio {
-            background: #f8fafc;
-        }
-
-        .portfolio-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 25px;
-        }
-
-        .portfolio-card {
-            background: white;
-
-            border-radius: 16px;
-
-            overflow: hidden;
-
-            border:
-                1px solid #e5e7eb;
-
-            box-shadow:
-                0 8px 25px
-                rgba(15, 23, 42, 0.05);
-
-            transition: 0.3s;
-
-            display: flex;
-
-            flex-direction: column;
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-
-            box-shadow:
-                0 15px 35px
-                rgba(15, 23, 42, 0.10);
-        }
-
-
-        /* WEBSITE PREVIEW */
-
-        .portfolio-image {
-            height: 220px;
-
-            padding: 20px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            background: #eaf2ff;
-
-            position: relative;
-
-            overflow: hidden;
-        }
-
-        .website-preview {
-            width: 90%;
-
-            height: 165px;
-
-            background: white;
-
-            border-radius: 10px;
-
-            box-shadow:
-                0 10px 30px
-                rgba(15, 23, 42, 0.15);
-
-            overflow: hidden;
-        }
-
-        .preview-top {
-            height: 25px;
-
-            background: #f1f5f9;
-
-            display: flex;
-
-            align-items: center;
-
-            padding-left: 10px;
-
-            gap: 5px;
-        }
-
-        .preview-dot {
-            width: 7px;
-
-            height: 7px;
-
-            border-radius: 50%;
-
-            background: #94a3b8;
-        }
-
-        .preview-body {
-            padding: 18px;
-        }
-
-        .preview-title {
-            height: 12px;
-
-            width: 55%;
-
-            background: #2563eb;
-
-            border-radius: 5px;
-
-            margin-bottom: 10px;
-        }
-
-        .preview-text {
-            height: 7px;
-
-            width: 80%;
-
-            background: #d1d5db;
-
-            border-radius: 5px;
-
-            margin-bottom: 7px;
-        }
-
-        .preview-boxes {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 7px;
-
-            margin-top: 18px;
-        }
-
-        .preview-box {
-            height: 45px;
-
-            background: #dbeafe;
-
-            border-radius: 5px;
-        }
-
-
-        /* DIFFERENT DEMO PREVIEW COLORS */
-
-        .restaurant-preview {
-            background: #fff7ed;
-        }
-
-        .restaurant-preview .preview-title {
-            background: #c2410c;
-        }
-
-        .restaurant-preview .preview-box {
-            background: #fed7aa;
-        }
-
-        .gym-preview {
-            background: #111827;
-        }
-
-        .gym-preview .preview-title {
-            background: #ef4444;
-        }
-
-        .gym-preview .preview-text {
-            background: #6b7280;
-        }
-
-        .gym-preview .preview-box {
-            background: #374151;
-        }
-
-        .business-preview {
-            background: #eff6ff;
-        }
-
-        .business-preview .preview-title {
-            background: #2563eb;
-        }
-
-
-        /* PORTFOLIO INFORMATION */
-
-        .portfolio-info {
-            padding: 24px;
-
-            flex: 1;
-
-            display: flex;
-
-            flex-direction: column;
-
-            align-items: flex-start;
-        }
-
-        .portfolio-info h3 {
-            margin-bottom: 8px;
-
-            font-size: 21px;
-        }
-
-        .portfolio-info p {
-            color: #6b7280;
-
-            font-size: 14px;
-
-            margin-bottom: 16px;
-        }
-
-        .demo-label {
-            display: inline-block;
-
-            font-size: 12px;
-
-            background: #eff6ff;
-
-            color: #2563eb;
-
-            padding: 7px 10px;
-
-            border-radius: 5px;
-
-            font-weight: 700;
-
-            margin-bottom: 18px;
-        }
-
-        .view-project {
-            display: inline-block;
-
-            padding: 10px 15px;
-
-            background: #2563eb;
-
-            color: white;
-
-            border-radius: 7px;
-
-            font-size: 14px;
-
-            font-weight: 700;
-
-            transition: 0.3s;
-
-            margin-top: auto;
-        }
-
-        .view-project:hover {
-            background: #1d4ed8;
-        }
-
-
-        /* =========================
-           ABOUT
-        ========================= */
-
-        .about {
-            background: white;
-        }
-
-        .about-container {
-            max-width: 1000px;
-
-            margin: auto;
-
-            display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap: 50px;
-
-            align-items: center;
-        }
-
-        .about-image {
-            min-height: 350px;
-
-            border-radius: 20px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #2563eb,
-                    #1e40af
-                );
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            color: white;
-
-            font-size: 80px;
-
-            font-weight: 800;
-        }
-
-        .about-text h2 {
-            font-size: 40px;
-
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            color: #6b7280;
-
-            margin-bottom: 18px;
-        }
-
-        .check-list {
-            list-style: none;
-
-            margin-top: 20px;
-        }
-
-        .check-list li {
-            margin-bottom: 12px;
-
-            font-weight: 600;
-        }
-
-        .check-list li::before {
-            content: "✓";
-
-            color: #2563eb;
-
-            margin-right: 10px;
-
-            font-weight: 900;
-        }
-
-
-        /* =========================
-           PRICING
-        ========================= */
-
-        .pricing {
-            background: #f8fafc;
-        }
-
-        .pricing-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 25px;
-
-            max-width: 1100px;
-
-            margin: auto;
-        }
-
-        .price-card {
-            background: white;
-
-            border:
-                1px solid #e5e7eb;
-
-            border-radius: 16px;
-
-            padding: 32px;
-        }
-
-        .price-card.featured {
-            border:
-                2px solid #2563eb;
-
-            transform:
-                translateY(-8px);
-        }
-
-        .popular {
-            display: inline-block;
-
-            background: #2563eb;
-
-            color: white;
-
-            padding: 5px 10px;
-
-            font-size: 12px;
-
-            font-weight: 700;
-
-            border-radius: 5px;
-
-            margin-bottom: 15px;
-        }
-
-        .price-card h3 {
-            font-size: 24px;
-
-            margin-bottom: 10px;
-        }
-
-        .price {
-            font-size: 25px;
-
-            font-weight: 800;
-
-            color: #2563eb;
-
-            margin: 15px 0;
-        }
-
-        .price-note {
-            color: #6b7280;
-
-            font-size: 14px;
-
-            margin-bottom: 20px;
-        }
-
-        .price-card ul {
-            list-style: none;
-
-            margin-bottom: 25px;
-        }
-
-        .price-card li {
-            margin-bottom: 12px;
-        }
-
-        .price-card li::before {
-            content: "✓";
-
-            color: #2563eb;
-
-            margin-right: 8px;
-
-            font-weight: bold;
-        }
-
-
-        /* =========================
-           CONTACT
-        ========================= */
-
-        .contact {
-            background: #111827;
-
-            color: white;
-        }
-
-        .contact-container {
-            max-width: 900px;
-
-            margin: auto;
-
-            display: grid;
-
-            grid-template-columns:
-                0.9fr 1.1fr;
-
-            gap: 50px;
-
-            align-items: start;
-        }
-
-        .contact-info h2 {
-            font-size: 42px;
-
-            margin-bottom: 18px;
-        }
-
-        .contact-info p {
-            color: #cbd5e1;
-
-            margin-bottom: 25px;
-        }
-
-        .whatsapp-big {
-            display: inline-block;
-
-            background: #25D366;
-
-            color: white;
-
-            padding: 15px 22px;
-
-            border-radius: 9px;
-
-            font-weight: 800;
-
-            margin-top: 10px;
-        }
-
-        .whatsapp-big:hover {
-            opacity: 0.9;
-        }
-
-
-        /* =========================
-           FORM
-        ========================= */
-
-        form {
-            background: white;
-
-            padding: 30px;
-
-            border-radius: 16px;
-        }
-
-        form input,
-        form textarea {
-            width: 100%;
-
-            padding: 14px;
-
-            margin-bottom: 15px;
-
-            border:
-                1px solid #d1d5db;
-
-            border-radius: 8px;
-
-            font-family: inherit;
-
-            font-size: 15px;
-        }
-
-        form textarea {
-            min-height: 130px;
-
-            resize: vertical;
-        }
-
-        form button {
-            width: 100%;
-
-            border: none;
-
-            cursor: pointer;
-
-            font-size: 16px;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            background: #0b1120;
-
-            color: #94a3b8;
-
-            text-align: center;
-
-            padding: 25px 7%;
-        }
-
-
-        /* =========================
-           FLOATING WHATSAPP
-        ========================= */
-
-        .floating-whatsapp {
-            position: fixed;
-
-            right: 20px;
-
-            bottom: 20px;
-
-            z-index: 2000;
-
-            background: #25D366;
-
-            color: white;
-
-            padding: 14px 18px;
-
-            border-radius: 50px;
-
-            font-weight: 800;
-
-            box-shadow:
-                0 8px 25px
-                rgba(0, 0, 0, 0.2);
-
-            transition: 0.3s;
-        }
-
-        .floating-whatsapp:hover {
-            transform: translateY(-3px);
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 850px) {
-
-            nav {
-                padding: 15px 5%;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                padding: 75px 5%;
-
-                flex-direction: column;
-
-                text-align: center;
-            }
-
-            .hero p {
-                margin-left: auto;
-
-                margin-right: auto;
-            }
-
-            .buttons {
-                justify-content: center;
-            }
-
-            .service-grid,
-            .portfolio-grid,
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-container,
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .price-card.featured {
-                transform: none;
-            }
-
-            section {
-                padding: 70px 5%;
-
-                scroll-margin-top: 70px;
-            }
-
-            .section-title h2,
-            .about-text h2,
-            .contact-info h2 {
-                font-size: 34px;
-            }
-
-            .hero-card {
-                width: 100%;
-            }
-
-            .floating-whatsapp {
-                right: 15px;
-
-                bottom: 15px;
-            }
-
-            .portfolio-image {
-                height: 210px;
-            }
-
-        }
-
-    </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZaidWeb | Professional Web Design</title>
+  
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS Variables & Global Resets */
+    :root {
+      --bg-dark: #0b0f17;
+      --bg-card: rgba(255, 255, 255, 0.03);
+      --bg-card-hover: rgba(255, 255, 255, 0.06);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+      --accent-cyan: #06b6d4;
+      --accent-glow: rgba(6, 182, 212, 0.25);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Container Utility */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 15, 23, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 18px 0;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    /* Typography & Section Titles */
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 120px 0 80px;
+      text-align: center;
+    }
+
+    /* Glow orb background effect */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 300px;
+      background: var(--accent-gradient);
+      opacity: 0.15;
+      filter: blur(120px);
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      border-radius: 9999px;
+      color: var(--accent-cyan);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      max-width: 800px;
+      margin: 0 auto 24px;
+    }
+
+    .hero h1 span {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 14px 28px;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent-gradient);
+      color: #fff;
+      box-shadow: 0 4px 20px var(--accent-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px var(--accent-glow);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Services Section */
+    .services {
+      padding: 100px 0;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 32px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(10px);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      background: var(--bg-card-hover);
+      border-color: rgba(6, 182, 212, 0.4);
+      box-shadow: 0 12px 30px -10px var(--accent-glow);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Portfolio Section */
+    .portfolio {
+      padding: 100px 0;
+    }
+
+    .portfolio-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .portfolio-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin: 16px 0 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .portfolio-link {
+      display: inline-flex;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 16px;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .portfolio-link:hover {
+      color: var(--accent-cyan);
+    }
+
+    /* Pricing Section */
+    .pricing {
+      padding: 100px 0;
+    }
+
+    .pricing-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pricing-card.popular {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 30px var(--accent-glow);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -12px;
+      right: 24px;
+      background: var(--accent-gradient);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 9999px;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin: 16px 0 8px;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin: 24px 0 32px;
+      padding: 0;
+    }
+
+    .pricing-features li {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pricing-features li::before {
+      content: '✓';
+      color: var(--accent-cyan);
+      font-weight: bold;
+    }
+
+    /* Contact / CTA Section */
+    .cta-section {
+      padding: 80px 0;
+      margin-bottom: 60px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      border-radius: 32px;
+      padding: 60px 32px;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .cta-box p {
+      color: var(--text-muted);
+      max-width: 500px;
+      margin: 0 auto 32px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 32px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #25D366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 9999px;
+      font-weight: 600;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 1000;
+      transition: transform 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
-
-
 <body>
 
-
-    <!-- =========================
-         NAVIGATION
-    ========================= -->
-
-    <nav>
-
-        <a href="#home" class="logo">
-            Zaid<span>Web</span>
-        </a>
-
-
-        <div class="nav-links">
-
-            <a href="#home">
-                Home
-            </a>
-
-            <a href="#services">
-                Services
-            </a>
-
-            <a href="#portfolio">
-                Portfolio
-            </a>
-
-            <a href="#about">
-                About
-            </a>
-
-            <a href="#pricing">
-                Pricing
-            </a>
-
-            <a href="#contact" class="nav-button">
-                Contact
-            </a>
-
-        </div>
-
-    </nav>
-
-
-
-    <!-- =========================
-         HERO
-    ========================= -->
-
-    <section class="hero" id="home">
-
-
-        <div class="hero-content">
-
-
-            <div class="small-title">
-                PROFESSIONAL WEB DESIGN
-            </div>
-
-
-            <h1>
-
-                Build a Website That
-
-                <span>
-                    Grows Your Business.
-                </span>
-
-            </h1>
-
-
-            <p>
-
-                I create modern, responsive and
-                mobile-friendly websites that help
-                businesses build a professional
-                online presence.
-
-            </p>
-
-
-            <div class="buttons">
-
-
-                <a
-                    href="#contact"
-                    class="button primary">
-
-                    Get Your Website
-
-                </a>
-
-
-                <a
-                    href="#portfolio"
-                    class="button secondary">
-
-                    View My Work
-
-                </a>
-
-
-            </div>
-
-
-        </div>
-
-
-
-        <div class="hero-card">
-
-
-            <div class="browser">
-
-
-                <div class="browser-top">
-
-                    <div class="dot"></div>
-
-                    <div class="dot"></div>
-
-                    <div class="dot"></div>
-
-                </div>
-
-
-                <div class="browser-content">
-
-
-                    <div class="fake-line"></div>
-
-                    <div class="fake-line small"></div>
-
-                    <div class="fake-line small"></div>
-
-
-                    <div class="fake-boxes">
-
-                        <div class="fake-box"></div>
-
-                        <div class="fake-box"></div>
-
-                        <div class="fake-box"></div>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =========================
-         SERVICES
-    ========================= -->
-
-    <section class="services" id="services">
-
-
-        <div class="section-title">
-
-            <h2>
-                What I Do
-            </h2>
-
-            <p>
-                Everything you need to establish
-                a professional presence online.
-            </p>
-
-        </div>
-
-
-
-        <div class="service-grid">
-
-
-            <div class="service-card">
-
-                <div class="icon">
-                    💻
-                </div>
-
-                <h3>
-                    Website Design
-                </h3>
-
-                <p>
-                    Modern and professional websites
-                    designed around your business
-                    and goals.
-                </p>
-
-            </div>
-
-
-
-            <div class="service-card">
-
-                <div class="icon">
-                    📱
-                </div>
-
-                <h3>
-                    Mobile Friendly
-                </h3>
-
-                <p>
-                    Your website will look great on
-                    phones, tablets and computers.
-                </p>
-
-            </div>
-
-
-
-            <div class="service-card">
-
-                <div class="icon">
-                    ⚡
-                </div>
-
-                <h3>
-                    Fast Websites
-                </h3>
-
-                <p>
-                    Clean and lightweight websites
-                    designed for a smooth browsing
-                    experience.
-                </p>
-
-            </div>
-
-
-
-            <div class="service-card">
-
-                <div class="icon">
-                    🎨
-                </div>
-
-                <h3>
-                    Custom Design
-                </h3>
-
-                <p>
-                    A unique design created around
-                    your brand, business and audience.
-                </p>
-
-            </div>
-
-
-
-            <div class="service-card">
-
-                <div class="icon">
-                    🔍
-                </div>
-
-                <h3>
-                    SEO Friendly
-                </h3>
-
-                <p>
-                    Websites structured with search
-                    engines and discoverability in mind.
-                </p>
-
-            </div>
-
-
-
-            <div class="service-card">
-
-                <div class="icon">
-                    🛠️
-                </div>
-
-                <h3>
-                    Website Updates
-                </h3>
-
-                <p>
-                    Need changes after launch?
-                    I can help update and improve
-                    your website.
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =========================
-         PORTFOLIO
-    ========================= -->
-
-    <section class="portfolio" id="portfolio">
-
-
-        <div class="section-title">
-
-            <h2>
-                My Work
-            </h2>
-
-            <p>
-                Explore some of my website concepts
-                created for different types of businesses.
-            </p>
-
-        </div>
-
-
-
-        <div class="portfolio-grid">
-
-
-            <!-- =========================
-                 DEMO 1 - SAFFRON & SPICE
-            ========================= -->
-
-            <div class="portfolio-card">
-
-                <div class="portfolio-image restaurant-preview">
-
-                    <div class="website-preview">
-
-                        <div class="preview-top">
-
-                            <div class="preview-dot"></div>
-
-                            <div class="preview-dot"></div>
-
-                            <div class="preview-dot"></div>
-
-                        </div>
-
-
-                        <div class="preview-body">
-
-                            <div class="preview-title"></div>
-
-                            <div class="preview-text"></div>
-
-                            <div class="preview-text"></div>
-
-
-                            <div class="preview-boxes">
-
-                                <div class="preview-box"></div>
-
-                                <div class="preview-box"></div>
-
-                                <div class="preview-box"></div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="portfolio-info">
-
-                    <h3>
-                        🍛 Saffron & Spice
-                    </h3>
-
-                    <p>
-                        A modern restaurant website designed
-                        to showcase the menu, atmosphere and
-                        make it easy for customers to contact
-                        the restaurant.
-                    </p>
-
-                    <span class="demo-label">
-                        RESTAURANT DEMO
-                    </span>
-
-                    <a
-                        href="restaurant-demo.html"
-                        class="view-project">
-
-                        View Live Demo →
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =========================
-                 DEMO 2 - FORGE FITNESS
-            ========================= -->
-
-            <div class="portfolio-card">
-
-                <div class="portfolio-image gym-preview">
-
-                    <div class="website-preview">
-
-                        <div class="preview-top">
-
-                            <div class="preview-dot"></div>
-
-                            <div class="preview-dot"></div>
-
-                            <div class="preview-dot"></div>
-
-                        </div>
-
-
-                        <div class="preview-body">
-
-                            <div class="preview-title"></div>
-
-                            <div class="preview-text"></div>
-
-                            <div class="preview-text"></div>
-
-
-                            <div class="preview-boxes">
-
-                                <div class="preview-box"></div>
-
-                                <div class="preview-box"></div>
-
-                                <div class="preview-box"></div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="portfolio-info">
-
-                    <h3>
-                        🏋️ FORGE Fitness
-                    </h3>
-
-                    <p>
-                        A powerful gym and fitness website
-                        designed to showcase programs,
-                        trainers, memberships and results.
-                    </p>
-
-                    <span class="demo-label">
-                        FITNESS DEMO
-                    </span>
-
-                    <a
-                        href="gym.html"
-                        class="view-project">
-
-                        View Live Demo →
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =========================
-                 DEMO 3 - NORTHSTAR STUDIO
-            ========================= -->
-
-            <div class="portfolio-card">
-
-                <div class="portfolio-image business-preview">
-
-                    <div class="website-preview">
-
-                        <div class="preview-top">
-
-                            <div class="preview-dot"></div>
-
-                            <div class="preview-dot"></div>
-
-                            <div class="preview-dot"></div>
-
-                        </div>
-
-
-                        <div class="preview-body">
-
-                            <div class="preview-title"></div>
-
-                            <div class="preview-text"></div>
-
-                            <div class="preview-text"></div>
-
-
-                            <div class="preview-boxes">
-
-                                <div class="preview-box"></div>
-
-                                <div class="preview-box"></div>
-
-                                <div class="preview-box"></div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="portfolio-info">
-
-                    <h3>
-                        💼 Northstar Studio
-                    </h3>
-
-                    <p>
-                        A professional business website
-                        designed for local companies,
-                        agencies and service providers.
-                    </p>
-
-                    <span class="demo-label">
-                        BUSINESS DEMO
-                    </span>
-
-                    <a
-                        href="business-demo.html"
-                        class="view-project">
-
-                        View Live Demo →
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =========================
-         ABOUT
-    ========================= -->
-
-    <section class="about" id="about">
-
-
-        <div class="about-container">
-
-
-            <div class="about-image">
-                Z
-            </div>
-
-
-
-            <div class="about-text">
-
-
-                <h2>
-                    Why Work With Me?
-                </h2>
-
-
-                <p>
-
-                    I create modern websites for
-                    businesses, entrepreneurs and
-                    individuals who want to build
-                    a professional presence online.
-
-                </p>
-
-
-                <p>
-
-                    Every website is designed to be
-                    clean, responsive and easy for
-                    visitors to use.
-
-                </p>
-
-
-                <ul class="check-list">
-
-                    <li>
-                        Modern and professional design
-                    </li>
-
-                    <li>
-                        Mobile-friendly layouts
-                    </li>
-
-                    <li>
-                        Clear calls-to-action
-                    </li>
-
-                    <li>
-                        Fast and lightweight websites
-                    </li>
-
-                    <li>
-                        Personalized to your business
-                    </li>
-
-                </ul>
-
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =========================
-         PRICING
-    ========================= -->
-
-    <section class="pricing" id="pricing">
-
-
-        <div class="section-title">
-
-
-            <h2>
-                Website Packages
-            </h2>
-
-
-            <p>
-
-                Choose a package that fits your needs.
-                Custom requirements can also be discussed.
-
-            </p>
-
-
-        </div>
-
-
-
-        <div class="pricing-grid">
-
-
-            <!-- STARTER -->
-
-            <div class="price-card">
-
-
-                <h3>
-                    Starter
-                </h3>
-
-
-                <div class="price">
-                    Contact for Price
-                </div>
-
-
-                <div class="price-note">
-
-                    Perfect for individuals and
-                    simple websites.
-
-                </div>
-
-
-                <ul>
-
-                    <li>
-                        Professional design
-                    </li>
-
-                    <li>
-                        Mobile responsive
-                    </li>
-
-                    <li>
-                        Basic pages
-                    </li>
-
-                    <li>
-                        Contact section
-                    </li>
-
-                </ul>
-
-
-                <a
-                    href="#contact"
-                    class="button primary">
-
-                    Get Started
-
-                </a>
-
-
-            </div>
-
-
-
-            <!-- BUSINESS -->
-
-            <div class="price-card featured">
-
-
-                <span class="popular">
-                    POPULAR
-                </span>
-
-
-                <h3>
-                    Business
-                </h3>
-
-
-                <div class="price">
-                    Contact for Price
-                </div>
-
-
-                <div class="price-note">
-
-                    Great for small and growing
-                    businesses.
-
-                </div>
-
-
-                <ul>
-
-                    <li>
-                        Professional design
-                    </li>
-
-                    <li>
-                        Mobile responsive
-                    </li>
-
-                    <li>
-                        Multiple pages
-                    </li>
-
-                    <li>
-                        Services section
-                    </li>
-
-                    <li>
-                        Contact / WhatsApp
-                    </li>
-
-                </ul>
-
-
-                <a
-                    href="#contact"
-                    class="button primary">
-
-                    Get Started
-
-                </a>
-
-
-            </div>
-
-
-
-            <!-- CUSTOM -->
-
-            <div class="price-card">
-
-
-                <h3>
-                    Custom
-                </h3>
-
-
-                <div class="price">
-                    Let's Talk
-                </div>
-
-
-                <div class="price-note">
-
-                    For websites with custom
-                    requirements.
-
-                </div>
-
-
-                <ul>
-
-                    <li>
-                        Custom design
-                    </li>
-
-                    <li>
-                        Custom features
-                    </li>
-
-                    <li>
-                        Responsive layout
-                    </li>
-
-                    <li>
-                        Business requirements
-                    </li>
-
-                </ul>
-
-
-                <a
-                    href="#contact"
-                    class="button primary">
-
-                    Discuss Project
-
-                </a>
-
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =========================
-         CONTACT
-    ========================= -->
-
-    <section class="contact" id="contact">
-
-
-        <div class="contact-container">
-
-
-            <div class="contact-info">
-
-
-                <h2>
-
-                    Ready to Build
-                    Your Website?
-
-                </h2>
-
-
-                <p>
-
-                    Tell me about your business and
-                    what kind of website you need.
-                    I'll get back to you through WhatsApp.
-
-                </p>
-
-
-                <a
-                    href="https://wa.me/918548813585?text=Hello%20Zaid%2C%20I%20am%20interested%20in%20getting%20a%20website."
-                    target="_blank"
-                    rel="noopener"
-                    class="whatsapp-big">
-
-                    💬 Chat on WhatsApp
-
-                </a>
-
-
-            </div>
-
-
-
-            <!-- CONTACT FORM -->
-
-            <form
-                onsubmit="sendToWhatsApp(event)">
-
-
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Your Name"
-                    required
-                >
-
-
-                <input
-                    type="text"
-                    id="business"
-                    placeholder="Business / Website Type"
-                    required
-                >
-
-
-                <textarea
-                    id="message"
-                    placeholder="Tell me about your website..."
-                    required></textarea>
-
-
-                <button
-                    type="submit"
-                    class="button primary">
-
-                    Send Message on WhatsApp
-
-                </button>
-
-
-            </form>
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =========================
-         FOOTER
-    ========================= -->
-
-    <footer>
-
-        <p>
-
-            © 2026 ZaidWeb.
-            All rights reserved.
-
-        </p>
-
-    </footer>
-
-
-
-    <!-- =========================
-         FLOATING WHATSAPP
-    ========================= -->
-
-    <a
-        href="https://wa.me/918548813585?text=Hello%20Zaid%2C%20I%20am%20interested%20in%20your%20web%20design%20services."
-        target="_blank"
-        rel="noopener"
-        class="floating-whatsapp">
-
-        💬 WhatsApp
-
-    </a>
-
-
-
-    <!-- =========================
-         WHATSAPP FORM SCRIPT
-    ========================= -->
-
-    <script>
-
-        function sendToWhatsApp(event) {
-
-            event.preventDefault();
-
-
-            const name =
-                document.getElementById("name").value;
-
-
-            const business =
-                document.getElementById("business").value;
-
-
-            const message =
-                document.getElementById("message").value;
-
-
-            const whatsappMessage =
-
-                "Hello Zaid!%0A%0A" +
-
-                "I am interested in your " +
-                "web design services.%0A%0A" +
-
-                "Name: " +
-                encodeURIComponent(name) +
-                "%0A" +
-
-                "Business / Website Type: " +
-                encodeURIComponent(business) +
-                "%0A%0A" +
-
-                "Project details:%0A" +
-
-                encodeURIComponent(message);
-
-
-            const whatsappURL =
-
-                "https://wa.me/918548813585?text=" +
-                whatsappMessage;
-
-
-            window.open(
-                whatsappURL,
-                "_blank"
-            );
-
-        }
-
-    </script>
-
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <a href="#home" class="logo">Zaid<span>Web</span></a>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero container">
+    <span class="hero-badge">PROFESSIONAL WEB DESIGN</span>
+    <h1>Build a Website That <span>Grows Your Business.</span></h1>
+    <p>I create modern, responsive, and mobile-friendly websites that help businesses establish a powerful online presence.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Get Your Website</a>
+      <a href="#portfolio" class="btn btn-secondary">View My Work</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services container">
+    <div class="section-title">
+      <h2>What I Do</h2>
+      <p>Everything you need to establish a professional presence online.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon">💻</div>
+        <h3>Website Design</h3>
+        <p>Modern and professional websites designed custom around your business goals.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <h3>Mobile Friendly</h3>
+        <p>Your website will adapt and look seamless across desktop, tablet, and mobile displays.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Fast Performance</h3>
+        <p>Clean, lightweight markup engineered for fast load speeds and smooth navigation.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎨</div>
+        <h3>Custom Branding</h3>
+        <p>Tailored typography, colors, and layout tailored specifically to your visual identity.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔍</div>
+        <h3>SEO Optimized</h3>
+        <p>Structured layout built around search engine best practices for improved discoverability.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛠️</div>
+        <h3>Website Maintenance</h3>
+        <p>Ongoing support and content updates whenever your business scales or evolves.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio container">
+    <div class="section-title">
+      <h2>My Work</h2>
+      <p>Explore some of my website concepts created for different industries.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card portfolio-card">
+        <h3>🍛 Saffron & Spice</h3>
+        <span class="portfolio-tag">RESTAURANT DEMO</span>
+        <p>A sleek restaurant layout showcasing online menus, ambience, and reservation details.</p>
+        <a href="restaurant-demo.html" class="portfolio-link">View Live Demo →</a>
+      </div>
+      <div class="card portfolio-card">
+        <h3>🏋️ FORGE Fitness</h3>
+        <span class="portfolio-tag">FITNESS DEMO</span>
+        <p>A dynamic fitness center design highlighting membership tiers, programs, and schedules.</p>
+        <a href="gym.html" class="portfolio-link">View Live Demo →</a>
+      </div>
+      <div class="card portfolio-card">
+        <h3>💼 Northstar Studio</h3>
+        <span class="portfolio-tag">BUSINESS DEMO</span>
+        <p>A corporate layout tailored for agencies, freelancers, and local service providers.</p>
+        <a href="business-demo.html" class="portfolio-link">View Live Demo →</a>
+      </div>
+    </div>
+  </section>
+
+ <!-- Pricing Section -->
+  <section id="pricing" class="pricing container">
+    <div class="section-title">
+      <h2>Website Packages</h2>
+      <p>Transparent pricing tailored for businesses, startups, and individuals.</p>
+    </div>
+    <div class="grid-3">
+      <!-- Starter Package -->
+      <div class="card pricing-card">
+        <h3>Starter</h3>
+        <div class="price">₹4,999</div>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Ideal for individuals & simple single-page sites.</p>
+        <ul class="pricing-features">
+          <li>Single Page Landing Site</li>
+          <li>100% Mobile Responsive</li>
+          <li>Basic Contact Form & Social Links</li>
+          <li>Fast Loading Speed</li>
+          <li>Delivery in 3–5 Days</li>
+        </ul>
+        <a href="https://wa.me/918548813585?text=Hello%20Zaid%2C%20I%20am%20interested%20in%20the%20Starter%20Package%20(₹4%2C999)." target="_blank" rel="noopener" class="btn btn-secondary" style="margin-top: auto; text-align: center;">Choose Starter</a>
+      </div>
+
+      <!-- Business Package (Highlighted) -->
+      <div class="card pricing-card popular">
+        <span class="popular-badge">MOST POPULAR</span>
+        <h3>Business</h3>
+        <div class="price">₹11,999</div>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Best for small & growing local businesses.</p>
+        <ul class="pricing-features">
+          <li>Up to 5 Custom Pages</li>
+          <li>Mobile & Tablet Responsive</li>
+          <li>WhatsApp Chat Integration</li>
+          <li>Basic Google SEO Setup</li>
+          <li>Contact Form with Email Notifications</li>
+          <li>Delivery in 7–10 Days</li>
+        </ul>
+        <a href="https://wa.me/918548813585?text=Hello%20Zaid%2C%20I%20am%20interested%20in%20the%20Business%20Package%20(₹11%2C999)." target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: auto; text-align: center;">Choose Business</a>
+      </div>
+
+      <!-- Custom / Premium Package -->
+      <div class="card pricing-card">
+        <h3>E-Commerce / Custom</h3>
+        <div class="price">₹24,999<span style="font-size: 0.9rem; font-weight: normal; color: var(--text-muted);">+</span></div>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">For online stores & feature-rich business portals.</p>
+        <ul class="pricing-features">
+          <li>Full E-Commerce / Custom Portal</li>
+          <li>Payment Gateway Integration</li>
+          <li>Product/Content Management System</li>
+          <li>Advanced SEO & Performance Optimization</li>
+          <li>Priority 30-Day Support</li>
+        </ul>
+        <a href="https://wa.me/918548813585?text=Hello%20Zaid%2C%20I%20have%20custom%20requirements%20for%20a%20website." target="_blank" rel="noopener" class="btn btn-secondary" style="margin-top: auto; text-align: center;">Discuss Custom Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Contact Section -->
+  <section id="contact" class="cta-section container">
+    <div class="cta-box">
+      <h2>Ready to Build Your Website?</h2>
+      <p>Tell me about your project needs, and let's bring your business online.</p>
+      <a href="https://wa.me/918548813585?text=Hello%20Zaid%2C%20I%20am%20interested%20in%20getting%20a%20website." target="_blank" rel="noopener" class="btn btn-primary">💬 Chat on WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 ZaidWeb. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp CTA -->
+  <a href="https://wa.me/918548813585?text=Hello%20Zaid%2C%20I%20am%20interested%20in%20your%20web%20design%20services." target="_blank" rel="noopener" class="whatsapp-float">
+    💬 WhatsApp
+  </a>
 
 </body>
-
 </html>
